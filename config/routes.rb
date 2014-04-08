@@ -7,6 +7,15 @@ Photogur::Application.routes.draw do
 
   get 'pictures/:id' => 'pictures#show', as: "picture"
 
+  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
+  patch 'pictures/:id' => "pictures#update" # TYPO
+
+  delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture"
+
+  # root :to => "pictures#index"
+
+# Annoying #{} and "picture" typo
+
   # get 'pictures/0' => 'pictures#picture0'
   # get 'pictures/1' => 'pictures#picture1'
   # get 'pictures/2' => 'pictures#picture2'
